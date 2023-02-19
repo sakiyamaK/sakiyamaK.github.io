@@ -44,7 +44,10 @@ build-runner:
 .PHONY: deploy
 deploy:
 	fvm flutter build web
-	firebase deploy
+	rm -rf ./docs
+	cp -R ./build/web ./docs
+	git commit -m "deploy"
+	git push
 
 .PHONY: test
 test:
