@@ -79,7 +79,7 @@ class MyHomePage extends StatelessWidget {
                                     children: [
                                       const TextSpan(
                                         text: """
-      崎山圭(さきやま けい)
+      崎山 圭(さきやま けい)
       生年月日: 1981年8月14日
       血液型: O型
       """,
@@ -150,6 +150,30 @@ the following twitter account.
                             ),
                           ),
                           defSizeBox,
+                          RichText(
+                            text: TextSpan(
+                              children: [
+                                const TextSpan(
+                                  text: "github: ",
+                                  style: TextStyle(color: Colors.black),
+                                ),
+                                TextSpan(
+                                  text: "@sakiyamaK",
+                                  style: const TextStyle(
+                                    color: Colors.blue,
+                                    fontSize: 16,
+                                  ),
+                                  recognizer: TapGestureRecognizer()
+                                    ..onTap = () async {
+                                      final uri = Uri.parse(
+                                          "https://github.com/sakiyamaK");
+                                      await launchUrl(uri);
+                                    },
+                                ),
+                              ],
+                            ),
+                          ),
+                          defSizeBox,
                           defSizeBox,
                           defSizeBox,
                           const Text(
@@ -192,7 +216,7 @@ the following twitter account.
                             """ 
 ・Flutter
 
- Flutter Webで「崎山圭のホームページ」を公開しました
+  - Flutter Webで「崎山圭のホームページ」を公開しました
 """,
                             style: defBoldTextStyle,
                             textAlign: TextAlign.start,
@@ -212,7 +236,7 @@ the following twitter account.
                             text: TextSpan(
                               children: [
                                 const TextSpan(
-                                  text: "UIKitのままレイアウトのみ宣言的に書けるライブラリ「",
+                                  text: "  - UIKitのままレイアウトのみ宣言的に書けるライブラリ「",
                                   style: defBoldTextStyle,
                                 ),
                                 TextSpan(
@@ -253,7 +277,7 @@ the following twitter account.
                               children: [
                                 TextSpan(
                                   text:
-                                      "  都内某所のプログラミング専門学校でiOSプログラミング講師を9ヶ月やりました",
+                                      "  - 都内某所のプログラミング専門学校でiOSプログラミング講師を9ヶ月やりました",
                                   style: defBoldTextStyle,
                                 ),
                               ],
@@ -265,7 +289,7 @@ the following twitter account.
                                 TextSpan(
                                   children: [
                                     const TextSpan(
-                                      text: "  主に土日の個人指導により３年で",
+                                      text: "  - 主に土日の個人指導により３年で",
                                       style: defBoldTextStyle,
                                     ),
                                     TextSpan(
@@ -307,7 +331,7 @@ the following twitter account.
                             text: TextSpan(
                               children: [
                                 const TextSpan(
-                                  text: "画像処理分野でコンピュータサイエンスの博士号",
+                                  text: "  - 画像処理分野で",
                                   style: defBoldTextStyle,
                                 ),
                                 TextSpan(
