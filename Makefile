@@ -46,7 +46,7 @@ deploy:
 	fvm flutter build web
 	rm -rf ./docs
 	cp -R ./build/web ./docs
-	git commit -m "deploy"
+	git commit -m "deploy" .
 	git push
 
 .PHONY: test
