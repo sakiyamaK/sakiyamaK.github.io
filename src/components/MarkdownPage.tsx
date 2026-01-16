@@ -32,7 +32,7 @@ export function MarkdownPage({ slug }: MarkdownPageProps) {
   if (loading) return <div>Loading...</div>;
 
   return (
-    <div className="markdown-content">
+    <div className={`markdown-content page-${slug}`}>
       <ReactMarkdown remarkPlugins={[remarkGfm]}>
         {content}
       </ReactMarkdown>

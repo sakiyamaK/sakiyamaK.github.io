@@ -22,7 +22,7 @@ function App() {
 
       <div className="container">
         {currentSlug === '/' ? (
-          <TopPage openUrl={openUrl} />
+          <TopPage openUrl={openUrl} onNavigate={handleNavigate} />
         ) : (
           <MarkdownPage slug={currentSlug} />
         )}

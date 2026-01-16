@@ -4,9 +4,10 @@ import remarkGfm from 'remark-gfm';
 
 interface TopPageProps {
   openUrl: (url: string) => void;
+  onNavigate: (slug: string) => void;
 }
 
-export function TopPage({ openUrl }: TopPageProps) {
+export function TopPage({ openUrl, onNavigate }: TopPageProps) {
   const [newsContent, setNewsContent] = useState('');
 
   useEffect(() => {
@@ -31,7 +32,7 @@ export function TopPage({ openUrl }: TopPageProps) {
             血液型: O型<br/>
             <span 
               className="link-text"
-              onClick={() => openUrl('https://www.twitter.com/sakiyamaK')}
+              onClick={() => onNavigate('profile')}
             >
               プロフィール
             </span>
