@@ -216,12 +216,21 @@ li {
 
 .top-page-news li {
   margin-bottom: 8px;
-  padding-left: 16px; /* Indentation for list items */
+  padding-left: 1.2em; /* Make space for the dash */
+  position: relative;
 }
 
 .top-page-news li::before {
   content: '- ';
-  margin-left: -16px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* Fix for when markdown renders list items with <p> tags inside */
+.top-page-news li p {
+  margin: 0;
+  display: inline-block;
 }
 
 .top-page-news p {
