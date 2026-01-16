@@ -146,3 +146,43 @@ ul {
 li {
   margin-bottom: 8px;
 }
+
+/* Markdown Content Styles */
+.markdown-content {
+  padding: 16px;
+  font-family: 'MS PGothic', sans-serif;
+}
+
+.markdown-content h1 {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.markdown-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+  background-color: white;
+  font-size: 16px;
+}
+
+.markdown-content th,
+.markdown-content td {
+  border: 2px solid #a0a0a0; /* 3D-ish border */
+  padding: 4px 8px;
+  vertical-align: middle;
+}
+
+/* Specific styling to match the screenshot's table look */
+.markdown-content td {
+  border: 1px solid #808080;
+}
+
+/* Links in markdown */
+.markdown-content a {
+  color: blue;
+  text-decoration: underline;
+}
+
