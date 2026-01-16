@@ -1,9 +1,21 @@
+import { useEffect, useState } from 'react';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 interface TopPageProps {
   openUrl: (url: string) => void;
 }
 
 export function TopPage({ openUrl }: TopPageProps) {
+  const [newsContent, setNewsContent] = useState('');
+
+  useEffect(() => {
+    fetch('/content/news.md')
+      .then(res => res.text())
+      .then(text => setNewsContent(text))
+      .catch(err => console.error('Failed to load news', err));
+  }, []);
+
   return (
     <>
       <h1 className="main-title">崎山圭のホームページ</h1>
@@ -64,73 +76,10 @@ export function TopPage({ openUrl }: TopPageProps) {
         </div>
 
         {/* Right Column */}
-        <div className="column">
-          <div className="latest-info-title">
-            ★★★　最新情報　★★★
-          </div>
-          <div className="divider"></div>
-
-          <div className="section-title">・Flutter</div>
-          <ul>
-            <li>
-              &nbsp;&nbsp;- Flutter Webで「崎山圭のホームページ」を公開しました
-            </li>
-          </ul>
-          <div className="divider"></div>
-
-          <div className="section-title">・iOS</div>
-          <ul>
-            <li>
-              &nbsp;&nbsp;- UIKitのままレイアウトのみ宣言的に書けるライブラリ「
-              <span 
-                className="link-text"
-                onClick={() => openUrl('https://github.com/sakiyamaK/DeclarativeUIKit')}
-              >
-                DeclarativeUIKit
-              </span>
-              」を公開しました
-            </li>
-          </ul>
-          <div className="divider"></div>
-
-          <div className="section-title">・プログラミング講師</div>
-          <ul>
-            <li>
-              &nbsp;&nbsp;- 都内某所のプログラミング専門学校でiOSプログラミング講師を9ヶ月やりました
-            </li>
-            <li>
-              &nbsp;&nbsp;- 主に土日の個人指導により３年で
-              <span 
-                className="link-text"
-                onClick={() => openUrl('https://note.com/sakiyamak/n/nfa1354fc624b')}
-              >
-                {' '}プログラミング未経験の文系7人をiOSエンジニアとして内定が出る
-              </span>
-              まで指導しました
-            </li>
-          </ul>
-          <div className="divider"></div>
-
-          <div className="section-title">・コンピュータサイエンス</div>
-          <ul>
-            <li>
-              &nbsp;&nbsp;- 画像処理分野で
-              <span 
-                className="link-text"
-                onClick={() => openUrl('https://www.osakafu-u.ac.jp/research/active/thesis/h21/')}
-              >
-                コンピュータサイエンスの博士号
-              </span>
-              を取得しました
-            </li>
-          </ul>
-          <div className="divider"></div>
-
-          <div className="info-text" style={{ marginTop: '32px' }}>
-            当サイトの内容、テキスト、画像等の無断転載・無断使用を固く禁じます。<br/>
-            また、まとめサイト等への引用を厳禁致します。<br/>
-            お問い合わせはTwitterのDMでご連絡をお願い致します。
-          </div>
+        <div className="column top-page-news">
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>
+            {newsContent}
+          </ReactMarkdown>
         </div>
       </div>
     </>
