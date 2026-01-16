@@ -2,7 +2,7 @@
 
 ***
 
-### React
+### ・React
 - 英語学習サイトの「[すらすら、いんぐりっしゅ](https://english-flow-trainer.vercel.app/)」を公開しました
 
 - Reactで「崎山圭のホームページ」を作り直しました
