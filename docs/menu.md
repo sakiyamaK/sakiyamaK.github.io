@@ -1,4 +1,5 @@
 - [トップ](/) #ffb6c1
-- [アプリ](movies) #00ff00
-- [Github](https://github.com/sakiyamaK) #00ffff
-- [職歴](resume) #ff00ff
+- [記事](articles) #00ff00
+- [アプリ](apps) #00ffff
+- [Github](github) #ff00ff
+- [職歴](resume) #ff0000
