@@ -6,11 +6,11 @@ import rehypeRaw from 'rehype-raw';
 import { useMarkdown } from '../hooks/useMarkdown';
 
 interface TopPageProps {
-  openUrl: (url: string) => void;
   onNavigate: (slug: string) => void;
+  // openUrl no longer needed as we use native <a> tags
 }
 
-export function TopPage({ openUrl, onNavigate }: TopPageProps) {
+export function TopPage({ onNavigate }: TopPageProps) {
   const { content: newsContent } = useMarkdown('/contents/news.md');
 
   return (
@@ -26,12 +26,16 @@ export function TopPage({ openUrl, onNavigate }: TopPageProps) {
             崎山 圭(さきやま けい)<br/>
             生年月日: 1981年8月14日<br/>
             血液型: O型<br/>
-            <span 
+            <a 
+              href="/profile"
               className="link-text"
-              onClick={() => onNavigate('profile')}
+              onClick={(e) => {
+                e.preventDefault();
+                onNavigate('profile');
+              }}
             >
               プロフィール
-            </span>
+            </a>
           </div>
 
           <div className="spacer"></div>
@@ -41,25 +45,29 @@ export function TopPage({ openUrl, onNavigate }: TopPageProps) {
             regarding my development schedule,<br/>
             or would like to make an enquiry concerning future<br/>
             projects, please do not hesitate to contact me through<br/>
-            the following twitter account.
+            the following X(SNS) account.
           </div>
 
           <div className="contact-row">
-            twitter: <span 
+            X(SNS): <a 
+              href="https://www.twitter.com/sakiyamaK"
               className="link-text"
-              onClick={() => openUrl('https://www.twitter.com/sakiyamaK')}
+              target="_blank"
+              rel="noopener noreferrer"
             >
               @sakiyamaK
-            </span>
+            </a>
           </div>
 
           <div className="contact-row">
-            github: <span 
+            Github: <a 
+              href="https://github.com/sakiyamaK"
               className="link-text"
-              onClick={() => openUrl('https://github.com/sakiyamaK')}
+              target="_blank"
+              rel="noopener noreferrer"
             >
               @sakiyamaK
-            </span>
+            </a>
           </div>
 
           <div className="spacer"></div>

@@ -24,9 +24,7 @@ function App() {
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
 
-  const openUrl = (url: string) => {
-    window.open(url, '_blank', 'noopener,noreferrer');
-  };
+
 
   const handleNavigate = (slug: string) => {
     // Determine the actual slug value
@@ -47,7 +45,7 @@ function App() {
 
       <div className="container">
         {currentSlug === '/' ? (
-          <TopPage openUrl={openUrl} onNavigate={handleNavigate} />
+          <TopPage onNavigate={handleNavigate} />
         ) : (
           <MarkdownPage slug={currentSlug} />
         )}

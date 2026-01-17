@@ -58,21 +58,42 @@ export function SideMenu({ onNavigate }: SideMenuProps) {
           <li 
             key={index} 
             className="sidebar-item"
-            onClick={() => {
-              if (item.isExternal) {
-                window.open(item.slug, '_blank', 'noopener,noreferrer');
-              } else {
-                onNavigate(item.slug);
-              }
-            }}
           >
-            <div 
-              className="sidebar-dot" 
-              style={{ backgroundColor: item.color }}
-            ></div>
-            <span className="sidebar-link">
-              {item.label}
-            </span>
+            <a 
+              href={item.isExternal ? item.slug : `/${item.slug === '/' ? '' : item.slug}`}
+              target={item.isExternal ? '_blank' : undefined}
+              rel={item.isExternal ? 'noopener noreferrer' : undefined}
+              onClick={(e) => {
+                if (item.isExternal) return;
+                e.preventDefault();
+                onNavigate(item.slug);
+              }}
+              style={{ 
+                display: 'flex', 
+                alignItems: 'center', 
+                width: '100%', 
+                padding: '12px 0',
+                textDecoration: 'none', /* Prevent underline on the dot area */
+                color: 'inherit' /* Let text color be inherited or set by inner span if needed, but standard link color usually comes from anchor */
+              }}
+            >
+              <div 
+                className="sidebar-dot" 
+                style={{ backgroundColor: item.color }}
+              ></div>
+              <span className="sidebar-link" style={{ textDecoration: 'underline' }}>
+                {/* Text decoration underline to mimic link, but color comes from parent anchor which may be blue/visited-purple? 
+                    If anchor color is blue, and we set color:inherit on anchor, it inherits black?
+                    Wait, CSS 'a' selector has specificity. 
+                    If we put style={{color: inherit}} on anchor, it overrides CSS 'a'. 
+                    We should NOT put color: inherit on anchor if we want standard link colors.
+                    But we don't want the DOT to be blue? Dot has no text so it has no color?
+                    Dot is a div. It won't show blue text color.
+                    So remove color: inherit from anchor style.
+                */}
+                {item.label}
+              </span>
+            </a>
           </li>
         ))}
       </ul>

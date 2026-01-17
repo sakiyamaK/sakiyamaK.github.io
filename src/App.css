@@ -16,6 +16,19 @@ body {
   background-repeat: repeat;
 }
 
+a {
+  color: #0000EE;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #551A8B;
+}
+
+a:active {
+  color: #FF0000;
+}
+
 .app-wrapper {
   display: flex;
   min-height: 100vh;
@@ -37,10 +50,7 @@ body {
 }
 
 .sidebar-item {
-  display: flex;
-  align-items: center;
-  padding: 12px 0;
-  cursor: pointer;
+  padding: 0; /* padding moved to link */
   font-size: 16px;
 }
 
@@ -52,8 +62,7 @@ body {
 }
 
 .sidebar-link {
-  color: #0000ff;
-  text-decoration: underline;
+  /* color and decoration handled by global a tag */
   cursor: pointer;
 }
 
@@ -98,8 +107,6 @@ body {
 }
 
 .link-text {
-  color: var(--link-color);
-  text-decoration: underline;
   cursor: pointer;
 }
 
@@ -195,11 +202,7 @@ li {
 
 
 
-/* Links in markdown */
-.markdown-content a {
-  color: blue;
-  text-decoration: underline;
-}
+
 
 
 /* Top Page News Markdown Styles */
@@ -253,11 +256,10 @@ li {
   line-height: 1.2;
   margin-bottom: var(--spacing-unit);
   white-space: pre-line;
+  margin-left: 1.5em; /* Indent all paragraphs to match the screenshot look */
 }
 
 .top-page-news a {
-  color: var(--link-color);
-  text-decoration: underline;
   cursor: pointer;
 }
 
