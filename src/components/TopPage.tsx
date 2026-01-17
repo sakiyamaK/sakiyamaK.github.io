@@ -1,6 +1,9 @@
-import { useEffect, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+
+import rehypeRaw from 'rehype-raw';
+
+import { useMarkdown } from '../hooks/useMarkdown';
 
 interface TopPageProps {
   openUrl: (url: string) => void;
@@ -8,14 +11,7 @@ interface TopPageProps {
 }
 
 export function TopPage({ openUrl, onNavigate }: TopPageProps) {
-  const [newsContent, setNewsContent] = useState('');
-
-  useEffect(() => {
-    fetch('/content/news.md')
-      .then(res => res.text())
-      .then(text => setNewsContent(text))
-      .catch(err => console.error('Failed to load news', err));
-  }, []);
+  const { content: newsContent } = useMarkdown('/contents/news.md');
 
   return (
     <>
@@ -70,15 +66,14 @@ export function TopPage({ openUrl, onNavigate }: TopPageProps) {
           <div className="spacer"></div>
 
           <div className="info-text">
-            所属:<br/>
-            働きたくない<br/>
-            都内某所
+            所属: 働きたくない<br/>
+            住所: 都内某所
           </div>
         </div>
 
         {/* Right Column */}
         <div className="column top-page-news">
-          <ReactMarkdown remarkPlugins={[remarkGfm]}>
+          <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
             {newsContent}
           </ReactMarkdown>
         </div>

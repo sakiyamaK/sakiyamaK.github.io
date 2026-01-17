@@ -25,7 +25,7 @@ body {
   width: 180px;
   background-color: #eef0ff; /* Light lavender mimicking the image */
   border-right: 4px solid #d0d0d0; /* Thick border for frame look */
-  padding: 20px 10px;
+  padding: 8px 10px;
   flex-shrink: 0;
   box-sizing: border-box;
 }
@@ -39,7 +39,8 @@ body {
 .sidebar-item {
   display: flex;
   align-items: center;
-  margin-bottom: 24px;
+  padding: 12px 0;
+  cursor: pointer;
   font-size: 16px;
 }
 
@@ -48,7 +49,6 @@ body {
   height: 12px;
   border-radius: 50%;
   margin-right: 12px;
-  box-shadow: 1px 1px 2px rgba(0,0,0,0.3); /* Slight 3D effect */
 }
 
 .sidebar-link {
@@ -58,8 +58,8 @@ body {
 }
 
 .container {
-  width: 1000px;
-  margin: 0 auto;
+  flex: 1; /* Expand to fill available space */
+  min-width: 1000px; /* Maintain minimum width for non-responsive layout */
   padding: 32px;
   box-sizing: border-box;
 }
@@ -75,6 +75,11 @@ body {
 
 .column {
   flex: 1;
+}
+
+.content-grid > .column:first-child {
+  flex: 0 0 340px; /* Fixed width for profile column */
+  margin-right: 20px;
 }
 
 .profile-image {
@@ -151,6 +156,11 @@ li {
 .markdown-content {
   padding: 16px;
   font-family: 'MS PGothic', sans-serif;
+  width: 100%;
+  min-width: 0; /* Prevent flex overflow */
+  box-sizing: border-box;
+  max-width: 900px; /* Limit width */
+  margin: 0 auto;   /* Center the block */
 }
 
 .markdown-content h1 {
@@ -164,7 +174,7 @@ li {
   width: 100%;
   border-collapse: collapse;
   margin-top: 16px;
-  background-color: white;
+  background-color: transparent;
   font-size: 16px;
 }
 
@@ -173,12 +183,10 @@ li {
   border: 2px solid #a0a0a0; /* 3D-ish border */
   padding: 4px 8px;
   vertical-align: middle;
+  word-break: break-word; /* Ensure text wraps */
 }
 
-/* Specific styling to match the screenshot's table look */
-.markdown-content td {
-  border: 1px solid #808080;
-}
+
 
 /* Links in markdown */
 .markdown-content a {
@@ -251,30 +259,7 @@ li {
 }
 
 
-/* Profile Page Specific Styles */
-.page-profile h1 {
-  font-size: 24px;
-  margin-bottom: 48px;
-}
 
-.page-profile table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 16px;
-}
-
-.page-profile th,
-.page-profile td {
-  padding: 12px 16px;
-  vertical-align: top;
-  line-height: 1.8;
-}
-
-.page-profile td:first-child {
-  width: 120px;
-  font-weight: bold;
-  white-space: nowrap;
-}
 
 
 /* Profile Page Specific Styles */

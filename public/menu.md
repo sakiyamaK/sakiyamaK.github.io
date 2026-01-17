@@ -2,4 +2,4 @@
 - [記事](articles) #00ff00
 - [アプリ](apps) #00ffff
 - [Github](github) #ff00ff
-- [職歴](resume) #ff0000
+- [技能・職歴](resume) #ff0000

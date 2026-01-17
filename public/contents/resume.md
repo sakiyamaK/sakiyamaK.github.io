@@ -1,3 +1,7 @@
+# 崎山 圭の技能
+| メディア名 | 備考 |
+| :--- | :--- |
+| **[Lapras](https://lapras.com/public/RSPB9LU)** |  |
 
 # 崎山 圭の職歴
 
