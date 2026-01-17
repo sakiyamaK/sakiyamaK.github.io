@@ -26,10 +26,21 @@ function App() {
 
 
 
+  const [visitedSlugs, setVisitedSlugs] = useState<Set<string>>(() => {
+    const saved = localStorage.getItem('visitedSlugs');
+    return saved ? new Set(JSON.parse(saved)) : new Set(['/']);
+  });
+
   const handleNavigate = (slug: string) => {
     // Determine the actual slug value
     const targetSlug = slug === '/' ? '/' : (slug.startsWith('/') ? slug.slice(1) : slug);
     
+    // Update visited slugs
+    const newVisited = new Set(visitedSlugs);
+    newVisited.add(targetSlug);
+    setVisitedSlugs(newVisited);
+    localStorage.setItem('visitedSlugs', JSON.stringify(Array.from(newVisited)));
+
     // Only push state if it's different to avoid cluttering history
     if (targetSlug !== currentSlug) {
         // use pushState with the same URL (null or empty string)
@@ -41,7 +52,7 @@ function App() {
 
   return (
     <div className="app-wrapper">
-      <SideMenu onNavigate={handleNavigate} />
+      <SideMenu onNavigate={handleNavigate} visitedSlugs={visitedSlugs} />
 
       <div className="container">
         {currentSlug === '/' ? (

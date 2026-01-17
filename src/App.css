@@ -21,7 +21,8 @@ a {
   text-decoration: underline;
 }
 
-a:visited {
+a:visited,
+a.visited {
   color: #551A8B;
 }
 

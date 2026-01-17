@@ -11,9 +11,10 @@ interface MenuItem {
 
 interface SideMenuProps {
   onNavigate: (slug: string) => void;
+  visitedSlugs: Set<string>;
 }
 
-export function SideMenu({ onNavigate }: SideMenuProps) {
+export function SideMenu({ onNavigate, visitedSlugs }: SideMenuProps) {
   const [items, setItems] = useState<MenuItem[]>([]);
   const { content: menuText } = useMarkdown('/menu.md');
 
@@ -61,6 +62,7 @@ export function SideMenu({ onNavigate }: SideMenuProps) {
           >
             <a 
               href={item.isExternal ? item.slug : `/${item.slug === '/' ? '' : item.slug}`}
+              className={!item.isExternal && visitedSlugs.has(item.slug) ? 'visited' : ''}
               target={item.isExternal ? '_blank' : undefined}
               rel={item.isExternal ? 'noopener noreferrer' : undefined}
               onClick={(e) => {
@@ -74,7 +76,6 @@ export function SideMenu({ onNavigate }: SideMenuProps) {
                 width: '100%', 
                 padding: '12px 0',
                 textDecoration: 'none', /* Prevent underline on the dot area */
-                color: 'inherit' /* Let text color be inherited or set by inner span if needed, but standard link color usually comes from anchor */
               }}
             >
               <div 
