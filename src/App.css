@@ -133,6 +133,13 @@ body {
   margin: var(--spacing-unit) 0;
 }
 
+.main-title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 24px;
+}
+
 .divider {
   border-top: 1px solid #a0a0a0; /* Darker divider for 90s look */
   margin: var(--spacing-unit) 0;
