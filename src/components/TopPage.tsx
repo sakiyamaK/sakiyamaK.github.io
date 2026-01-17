@@ -15,7 +15,7 @@ export function TopPage({ onNavigate }: TopPageProps) {
 
   return (
     <>
-      <h1 className="main-title">崎山圭のホームページ</h1>
+      <h1 className="main-title">崎山 圭のホームページ</h1>
       
       <div className="content-grid">
         {/* Left Column */}
@@ -23,7 +23,8 @@ export function TopPage({ onNavigate }: TopPageProps) {
           <img src="/images/me.png" alt="Profile" className="profile-image" />
           
           <div className="profile-text">
-            崎山 圭(さきやま けい)<br/>
+            崎山 圭(さきやま けい)<br />
+            Kei Sakiyama<br />
             生年月日: 1981年8月14日<br/>
             血液型: O型<br/>
             <a 
