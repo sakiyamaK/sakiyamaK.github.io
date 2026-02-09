@@ -3,3 +3,5 @@
 <img src="/images/the_app_8_a.png" width="200" />
 <img src="/images/the_app_8_b.png" width="200" />
 <img src="/images/the_app_8_c.png" width="200" />
+
+[プライバシーポリシー](/the_app_8/privacy)
