@@ -48,8 +48,9 @@ function App() {
 
     // Only push state if it's different to avoid cluttering history
     if (targetSlug !== currentSlug) {
-        // use pushState with the same URL (null or empty string)
-        window.history.pushState({ slug: targetSlug }, '', '');
+        // Construct the display URL
+        const displayUrl = targetSlug === '/' ? '/' : `/${targetSlug}`;
+        window.history.pushState({ slug: targetSlug }, '', displayUrl);
         setCurrentSlug(targetSlug);
         window.scrollTo(0, 0);
     }
@@ -63,7 +64,7 @@ function App() {
         {currentSlug === '/' ? (
           <TopPage onNavigate={handleNavigate} />
         ) : (
-          <MarkdownPage slug={currentSlug} />
+          <MarkdownPage slug={currentSlug} onNavigate={handleNavigate} />
         )}
       </div>
     </div>
