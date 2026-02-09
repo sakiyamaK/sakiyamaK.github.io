@@ -5,11 +5,16 @@ import { TopPage } from './components/TopPage';
 import { MarkdownPage } from './components/MarkdownPage';
 
 function App() {
-  const [currentSlug, setCurrentSlug] = useState('/');
+  const [currentSlug, setCurrentSlug] = useState(() => {
+    const path = window.location.pathname;
+    return path === '/' ? '/' : path.slice(1);
+  });
 
   useEffect(() => {
     // Initial state replacement to ensure we can go back to 'top' if we start here
-    window.history.replaceState({ slug: '/' }, '', '');
+    const path = window.location.pathname;
+    const initialSlug = path === '/' ? '/' : path.slice(1);
+    window.history.replaceState({ slug: initialSlug }, '', '');
 
     const handlePopState = (event: PopStateEvent) => {
       if (event.state && event.state.slug) {
