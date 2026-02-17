@@ -16,6 +16,10 @@
 
 ### ・iOS
 
+**「[8番アプリ(SNS Edition)](/the_app_8)」がApp Storeでリリースされました！**
+
+
+
 **UIKitでObservationを宣言的に使えるようにするライブラリ「[ObservableUIKit](https://github.com/sakiyamaK/ObservableUIKit)」を公開しました**
 
 **UIKitのままレイアウトのみ宣言的に書けるライブラリ「[DeclarativeUIKit](https://github.com/sakiyamaK/DeclarativeUIKit)」を公開しました**
