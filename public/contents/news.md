@@ -1,18 +1,6 @@
 # ★★★　最新情報　★★★
 
 ***
-	
-**明けましておめでとうございます。**
-**本年もよろしくお願いいたします。**
-
-***
-
-### ・React
-  **英語学習サイトの「[すらすら、いんぐりっしゅ](https://english-flow-trainer.vercel.app/)」を公開しました**
-
-  **「崎山圭のホームページ」を作りました**
-
-***
 
 ### ・iOS
 
@@ -20,9 +8,17 @@
 
 **UIKitでObservationを宣言的に使えるようにするライブラリ「[ObservableUIKit](https://github.com/sakiyamaK/ObservableUIKit)」を公開しました**
 
-**UIKit의ままレイアウトのみ宣言的に書けるライブラリ「[DeclarativeUIKit](https://github.com/sakiyamaK/DeclarativeUIKit)」を公開しました**
+**UIKitのままレイアウトのみ宣言的に書けるライブラリ「[DeclarativeUIKit](https://github.com/sakiyamaK/DeclarativeUIKit)」を公開しました**
 
 ***
+
+### ・Web
+  **英語学習サイトの「[すらすら、いんぐりっしゅ](https://english-flow-trainer.vercel.app/)」を公開しました**
+
+  **「崎山圭のホームページ」を作りました**
+
+***
+
 
 ### ・プログラミング講師
 
