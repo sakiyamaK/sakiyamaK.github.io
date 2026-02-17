@@ -7,10 +7,6 @@
 
 ***
 
-**2026/02/16 「[8番アプリ(SNS Edition)](/the_app_8)」がApp Storeでリリースされました！**
-
-***
-
 ### ・React
   **英語学習サイトの「[すらすら、いんぐりっしゅ](https://english-flow-trainer.vercel.app/)」を公開しました**
 
@@ -20,12 +16,11 @@
 
 ### ・iOS
 
-
-
+**「[8番アプリ(SNS Edition)](/the_app_8)」をApp Storeでリリースしました**
 
 **UIKitでObservationを宣言的に使えるようにするライブラリ「[ObservableUIKit](https://github.com/sakiyamaK/ObservableUIKit)」を公開しました**
 
-**UIKitのままレイアウトのみ宣言的に書けるライブラリ「[DeclarativeUIKit](https://github.com/sakiyamaK/DeclarativeUIKit)」を公開しました**
+**UIKit의ままレイアウトのみ宣言的に書けるライブラリ「[DeclarativeUIKit](https://github.com/sakiyamaK/DeclarativeUIKit)」を公開しました**
 
 ***
 
