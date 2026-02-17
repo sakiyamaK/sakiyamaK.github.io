@@ -7,6 +7,10 @@
 
 ***
 
+**2026/02/16 「[8番アプリ(SNS Edition)](/the_app_8)」がApp Storeでリリースされました！**
+
+***
+
 ### ・React
   **英語学習サイトの「[すらすら、いんぐりっしゅ](https://english-flow-trainer.vercel.app/)」を公開しました**
 
@@ -16,7 +20,6 @@
 
 ### ・iOS
 
-**「[8番アプリ(SNS Edition)](/the_app_8)」がApp Storeでリリースされました！**
 
 
 
